@@ -17,11 +17,11 @@ public class ShortURLServiceImpl implements ShortURLService {
         return hashedURLs.put(originalURL, new ShortURLModel(originalURL)).getURL();
     }
 
-    public String getOriginalURL(ShortURLModel shortURL){
+    public String getOriginalURL(String shortURL){
         // Return a key by value, shortURL
         return hashedURLs.entrySet()
                 .stream()
-                .filter(entry -> Objects.equals(entry.getValue(), shortURL))
+                .filter(entry -> Objects.equals(entry.getValue(), new ShortURLModel(shortURL)))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList()).get(0);
     }

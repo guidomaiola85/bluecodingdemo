@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 
-@RestController("/")
+@RestController
 public class ShortURLController {
 
 
@@ -21,7 +21,7 @@ public class ShortURLController {
 
     @GetMapping(value = "/shortURL")
     String getOriginalURL(String shortURL){
-        return null;
+        return shortURLService.getOriginalURL(shortURL);
     }
 
     @GetMapping(value = "/top100")

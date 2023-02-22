@@ -7,7 +7,7 @@ import java.util.List;
 public interface ShortURLService {
     String getShortURL(String originalURL);
 
-    String getOriginalURL(ShortURLModel shortURL);
+    String getOriginalURL(String shortURL);
 
     List<String> getTop100FrequentURL();
 }
